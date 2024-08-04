@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Tilt+Neon&display=swap');
+        </style>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #main_container{
+            display: flex;
+            font-family: "Tilt Neon", sans-serif;
+        }
+        #left_container{
+            width: 50%;
+            height: 100vh;
+            background-color: #d1dce7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+        }
+        
+        #bounceDiv{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        #first{
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        #text-area{
+            border-radius: 5px;
+            padding: 10px;
+            border: 2px solid black;
+            box-shadow: 5px 8px 6px rgb(156, 104, 104);
+        }
+
+        .colors-notes-text{
+            display: flex;
+            flex-direction: column;
+        }
+
+        #button{
+            margin-right: 55%;
+        }
+
+        #button button{
+            border: 0px;
+            border-radius: 35px;
+            padding: 20px;
+            font-size: 18px;
+            width: 150px;
+            background: linear-gradient(90deg,rgb(228, 32, 225),rgb(213, 150, 31));
+            font-weight: 600;
+            box-shadow: 1px 2px 7px rgb(228, 32, 225);
+            color: white;
+        }
+
+        #right_container{
+            width: 50%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+            align-items: center;
+        }
+
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            40% {
+                transform: translateY(-20px) scale(1.1);
+            }
+            60% {
+                transform: translateY(-40px) scale(0.9);
+            }
+        }
+
+        .bounce {
+            display: block; 
+            animation: bounce 1.5s;
+        }
+    </style>
+</head>
+<body>
+    <div id="main_container">
+        <div id="left_container">
+            <div id="bounceDiv">
+                <div id="first">
+                    <textarea placeholder="// write your notes here" id="text-area" rows="13" cols="60"></textarea>
+                    <div class="colors-notes-text">
+                        <p>Text</p>
+                        <input type="color" name="" id="color-text">
+                        <p>Notes</p>
+                        <input type="color" name="" id="color">
+                    </div>
+                </div>
+                <div id="button">
+                    <button>Add Notes</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="right_container">
+            <h1>Your Notes</h1>
+            <br><br><br>
+            <p id="message">You haven't added any note yet.</p>
+            <div id="notes_container"></div>
+        </div>
+    </div>
+    <audio id="popSound" src="./multi-pop-1-188165.mp3"></audio>
+    <audio id="pop2Sound" src="./sci-fi-bubble-pop-89059.mp3"></audio>
+    <script src="./script2.js"></script>
+</body>
+</html>
